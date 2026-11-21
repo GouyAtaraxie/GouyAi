@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# Paramètres locaux
+.env
+.env.*
+!.env.example
+
+# Fichiers temporaires
+*.log
+.ipynb_checkpoints/
+
+# Données volumineuses et entraînements IA
+data/
+datasets/
+checkpoints/
+runs/
+*.pt
+*.pth
+*.safetensors
+*.gguf
+*.ckpt
+
+# Système
+.DS_Store
+Thumbs.db
+
+# Clés et certificats potentiellement sensibles
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Environnements Python supplémentaires
+env/
+.conda/
+conda-env/
+
+# Benchmarks locaux (publication éventuelle plus tard)
+/gouyai_pc_benchmark/
