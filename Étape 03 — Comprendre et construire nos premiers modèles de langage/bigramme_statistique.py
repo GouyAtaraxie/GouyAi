@@ -2,25 +2,19 @@ texte = "ababac"
 L = []
 stoi = {}
 itos = {}
-for caracter in texte :
-    if caracter not in L :
-        L.append(caracter)
+for character in texte :
+    if character not in L :
+        L.append(character)
 
-for index, caracter in enumerate(L) :
-    stoi[caracter] = index
-    itos[index] = caracter
+for index, character in enumerate(L) :
+    stoi[character] = index
+    itos[index] = character
 
 matrice = [[0 for _ in range(len(itos))] for _ in range(len(itos))]
 
-for i in range(len(texte)) :
-    if i+1 == len(texte) :
-        break
-    else :
-        matrice[stoi[texte[i]]][stoi[texte[i+1]]] += 1
+for i in range(len(texte)-1) :
+    matrice[stoi[texte[i]]][stoi[texte[i+1]]] += 1
         
-
-
-
 def encoder(stoi, texte) :
     L=[]
     for i in range(len(texte)) :
