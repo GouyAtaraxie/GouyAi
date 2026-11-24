@@ -14,6 +14,17 @@ matrice = [[0 for _ in range(len(itos))] for _ in range(len(itos))]
 
 for i in range(len(texte)-1) :
     matrice[stoi[texte[i]]][stoi[texte[i+1]]] += 1
+
+matrice_proba = [[0 for _ in range(len(itos))] for _ in range(len(itos))]
+
+for i in range(len(matrice)) :
+    if sum(matrice[i]) == 0 :
+        for j in range(len(matrice)) :
+            matrice_proba[i][j] = 1/(len(matrice[i]))
+    else :
+        for j in range(len(matrice)) :
+            matrice_proba[i][j] = matrice[i][j]/sum(matrice[i])
+        
         
 def encoder(stoi, texte) :
     L=[]
@@ -31,4 +42,4 @@ encodé = encoder(stoi, texte)
 
 décodé = decoder(itos, encodé)
               
-print(matrice)
+print(matrice, matrice_proba)
