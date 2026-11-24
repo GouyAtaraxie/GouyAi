@@ -18,12 +18,14 @@ for i in range(len(texte)-1) :
 matrice_proba = [[0 for _ in range(len(itos))] for _ in range(len(itos))]
 
 for i in range(len(matrice)) :
-    if sum(matrice[i]) == 0 :
+    somme = sum(matrice[i])
+    length = len(matrice[i])
+    if somme == 0 :
         for j in range(len(matrice)) :
-            matrice_proba[i][j] = 1/(len(matrice[i]))
+            matrice_proba[i][j] = 1/length
     else :
         for j in range(len(matrice)) :
-            matrice_proba[i][j] = matrice[i][j]/sum(matrice[i])
+            matrice_proba[i][j] = matrice[i][j]/somme
         
         
 def encoder(stoi, texte) :
