@@ -1,3 +1,5 @@
+import random
+
 texte = "ababac"
 L = []
 stoi = {}
@@ -40,8 +42,19 @@ def decoder(itos, encodé) :
         L += itos[encodé[i]]
     return L
 
+def generator(text, long):
+    txt = text[-1:]
+    for _ in range(long) :
+        txt += random.choices(
+            population=L,
+            weights=matrice_proba[stoi[txt[-1:]]],
+            k=1
+            )[0]
+    return text+txt[1:]
+
 encodé = encoder(stoi, texte)
 
 décodé = decoder(itos, encodé)
-              
-print(matrice, matrice_proba)
+
+for _ in range(5) :
+    print(generator(texte, 5))
